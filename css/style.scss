@@ -1,0 +1,12 @@
+@import "_nullstyle";
+@font-face {
+   font-family: "Golos";
+   src: url("../font/Golos-Text_Regular.woff2") format("woff2"), url("../font/Golos-Text_Regular.woff") format("woff");
+   src: local("Golos Text Regular"), local("Golos-Text_Regular");
+   font-weight: 400;
+   font-style: normal;
+}
+
+body {
+   font-family: "Golos", sans-serif;
+}
