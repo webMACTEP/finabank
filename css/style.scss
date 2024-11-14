@@ -1,12 +1,37 @@
 @import "_nullstyle";
 @font-face {
-   font-family: "Golos";
-   src: url("../font/Golos-Text_Regular.woff2") format("woff2"), url("../font/Golos-Text_Regular.woff") format("woff");
-   src: local("Golos Text Regular"), local("Golos-Text_Regular");
+   font-family: "Lato";
+   src: url("../font/latoregular.woff2") format("woff2");
+   src: local("Lato Text Regular"), local("Lato-Text_Regular");
    font-weight: 400;
    font-style: normal;
 }
+@font-face {
+   font-family: "Lato";
+   src: url("../font/latosemibold.woff2") format("woff2");
+   src: local("Lato Text Regular"), local("Lato-Text_Regular");
+   font-weight: 600;
+   font-style: normal;
+}
+@font-face {
+   font-family: "Lato";
+   src: url("../font/latobold.woff2") format("woff2");
+   src: local("Lato Text Regular"), local("Lato-Text_Regular");
+   font-weight: 700;
+   font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+.nunito {
+   font-family: "Nunito", sans-serif;
+   font-optical-sizing: auto;
+   font-weight: 400;
+   font-style: normal;
+ }
 
 body {
-   font-family: "Golos", sans-serif;
+   font-family: "Lato", sans-serif;
+   font-optical-sizing: auto;
+   font-weight: 400;
+   font-style: normal;
 }
