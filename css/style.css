@@ -106,4 +106,9 @@ body {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+}
+
+.container {
+  max-width: 1208px;
+  margin: 0px auto;
 }/*# sourceMappingURL=style.css.map */
