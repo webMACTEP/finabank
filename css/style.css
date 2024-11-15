@@ -143,6 +143,7 @@ main {
 
 .header {
   position: fixed;
+  z-index: 999;
   min-width: 100%;
   padding: 14px 0px;
   background: #ffffff;
