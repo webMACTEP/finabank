@@ -75,24 +75,31 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------*/
 @font-face {
   font-family: "Lato";
-  src: url("../font/latoregular.woff2") format("woff2");
-  src: local("Lato Text Regular"), local("Lato-Text_Regular");
+  src: url("../font/latoregular.woff2") format("woff2"), local("Lato Regular"), local("Lato-Regular");
   font-weight: 400;
   font-style: normal;
+  ont-display: swap;
 }
 @font-face {
   font-family: "Lato";
-  src: url("../font/latosemibold.woff2") format("woff2");
-  src: local("Lato Text Regular"), local("Lato-Text_Regular");
+  src: url("../font/latomedium.woff2") format("woff2"), local("Lato Medium"), local("Lato-Medium");
+  font-weight: 500;
+  font-style: normal;
+  ont-display: swap;
+}
+@font-face {
+  font-family: "Lato";
+  src: url("../font/latosemibold.woff2") format("woff2"), local("Lato Semibold"), local("Lato-Semibold");
   font-weight: 600;
   font-style: normal;
+  ont-display: swap;
 }
 @font-face {
   font-family: "Lato";
-  src: url("../font/latobold.woff2") format("woff2");
-  src: local("Lato Text Regular"), local("Lato-Text_Regular");
+  src: url("../font/latobold.woff2") format("woff2"), local("Lato Bold"), local("Lato-Bold");
   font-weight: 700;
   font-style: normal;
+  ont-display: swap;
 }
 .nunito {
   font-family: "Nunito", sans-serif;
@@ -109,17 +116,32 @@ body {
   background: #f5f9fa;
 }
 
+h2 {
+  color: var(--black, #1b2636);
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
 .container {
   max-width: 1208px;
   margin: 0px auto;
 }
 
+main {
+  padding: 75px 0px 0px 0px;
+}
+
 .header {
+  position: fixed;
+  min-width: 100%;
   padding: 14px 0px;
   background: #ffffff;
   border-bottom: 1px solid #dddde4;
 }
 .header .circle {
+  transition: 0.2s;
   width: 14px;
   height: 14px;
   border-radius: 14px;
@@ -135,6 +157,12 @@ body {
   background: #14b8ad;
   border-radius: 16px;
   padding: 1px;
+}
+.header .toggle:hover > .circle {
+  box-shadow: 0 0px 6px rgba(0, 0, 0, 0.4);
+}
+.header .toggle.dark {
+  justify-content: flex-start;
 }
 .header .day-night {
   display: flex;
@@ -201,4 +229,170 @@ body {
   display: flex;
   align-items: center;
   gap: 32px;
+}
+
+.breadcrumbs {
+  padding: 28px 0px 32px 0px;
+}
+.breadcrumbs li:first-child a {
+  padding: 0px 0px 0px 0px;
+}
+.breadcrumbs li:first-child a::before {
+  display: none;
+}
+.breadcrumbs a {
+  padding: 0px 0px 0px 10px;
+  position: relative;
+  color: #9ca3af;
+  font-size: 14px;
+  font-weight: 400;
+}
+.breadcrumbs a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 5px;
+  height: 1px;
+  background: #9ca3af;
+}
+.breadcrumbs ul {
+  display: flex;
+  gap: 5px;
+}
+
+.content-wrapper {
+  display: flex;
+  gap: 28px;
+}
+.content-wrapper .right-menu {
+  flex-grow: 1;
+}
+.content-wrapper .content {
+  min-width: 796px;
+}
+
+.button-green {
+  border-radius: 46px;
+  border: 1px solid var(--Green, #14b8ad);
+  background: var(--Green, #14b8ad);
+  display: flex;
+  padding: 12px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  color: var(--White, #fff);
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%; /* 22.4px */
+  cursor: pointer;
+}
+
+.button-gray {
+  display: flex;
+  padding: 8px 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 200px;
+  background: var(--Fon, #e3eef0);
+  color: var(--black, #1b2636);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 15.6px */
+  letter-spacing: 0.12px;
+  cursor: pointer;
+}
+
+.intro h2 {
+  margin: 0px 0px 16px 0px;
+}
+.intro .stars {
+  display: flex;
+  align-items: center;
+  color: #626b84;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 12px; /* 100% */
+  gap: 6px;
+}
+.intro .stars span {
+  margin-left: 2px;
+}
+.intro .views {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.intro .views .item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--text-light, #9ca3af);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 15.6px */
+  letter-spacing: 0.12px;
+}
+.intro .param {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.intro .row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.intro .content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.intro .info {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.intro .info .item {
+  flex-grow: 1;
+  display: flex;
+  gap: 16px;
+}
+.intro .info .item .infor {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  color: var(--Gray, #626b84);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 21.6px; /* 154.286% */
+}
+.intro .info .item .infor span {
+  color: var(--Black, #1b2636);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 27px */
+}
+.intro .info .item img {
+  width: 48px;
+  height: 48px;
+}
+.intro .sub-logo {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+.intro .sub-logo .img {
+  padding: 21px 10px;
 }/*# sourceMappingURL=style.css.map */
